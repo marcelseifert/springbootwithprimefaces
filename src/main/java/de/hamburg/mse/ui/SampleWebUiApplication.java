@@ -21,8 +21,6 @@ import javax.servlet.ServletContext;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.ServletListenerRegistrationBean;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
@@ -32,7 +30,7 @@ import org.springframework.web.context.ServletContextAware;
 
 import com.sun.faces.config.ConfigureListener;
 
-@SpringBootApplication(exclude = { WebMvcAutoConfiguration.class, DispatcherServletAutoConfiguration.class })
+@SpringBootApplication
 public class SampleWebUiApplication extends SpringBootServletInitializer implements ServletContextAware {
 
 	@Override

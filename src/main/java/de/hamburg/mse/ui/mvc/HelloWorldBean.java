@@ -1,10 +1,12 @@
 package de.hamburg.mse.ui.mvc;
 
-import org.springframework.stereotype.Component;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import lombok.Data;
 
-@Component
+@ManagedBean
+@ViewScoped
 @Data
 public class HelloWorldBean {
 

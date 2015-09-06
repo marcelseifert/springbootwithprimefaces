@@ -102,7 +102,7 @@ body {
 </style>
 	</h:head>
 	<h:body>
-		<ui:composition template="templates/template.xhtml">
+		<ui:composition template="templates/template_bootstrap.xhtml">
 			<ui:define name="content">
 
 				<h:form>
@@ -111,15 +111,28 @@ body {
 							JSF 2.2 project running on Spring Boot 1.2.5</div>
 					</prime:panel>
 					<prime:panel header="What do you see here?">
-						<div style="height: 50px">This is a simple PrimeFaces 5.2 /
-							JSF 2.2 project running on Spring Boot 1.2.5</div>
+						<prime:button outcome="index" value="Button" >
+							<f:param name="productId" value="10" />
+						</prime:button>
 					</prime:panel>
 					<prime:panel header="What do you see here?">
-						<div style="height: 50px">This is a simple PrimeFaces 5.2 /
-							JSF 2.2 project running on Spring Boot 1.2.5</div>
-					</prime:panel>
-					<prime:panel header="JSF 2.2 Bean Access">
-						<div>#{helloWorldBean.something} ddd</div>
+						<prime:dataTable var="car" value="#{dtBasicView.cars}">
+							<prime:column headerText="Id">
+								<h:outputText value="#{car.id}" />
+							</prime:column>
+
+							<prime:column headerText="Year">
+								<h:outputText value="#{car.year}" />
+							</prime:column>
+
+							<prime:column headerText="Brand">
+								<h:outputText value="#{car.brand}" />
+							</prime:column>
+
+							<prime:column headerText="Color">
+								<h:outputText value="#{car.color}" />
+							</prime:column>
+						</prime:dataTable>
 					</prime:panel>
 				</h:form>
 			</ui:define>

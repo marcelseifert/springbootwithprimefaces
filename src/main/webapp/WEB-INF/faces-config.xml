@@ -5,13 +5,11 @@
     version="2.2">
 
     <application>
-        <resource-bundle>
-            <base-name>messages</base-name>
-            <var>bundle</var>
-        </resource-bundle>
-        <message-bundle>messages</message-bundle>
-        
-         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     </application>
    
+    
+    <lifecycle>
+        <phase-listener>org.springframework.web.jsf.DelegatingPhaseListenerMulticaster</phase-listener>
+    </lifecycle>
  </faces-config>
