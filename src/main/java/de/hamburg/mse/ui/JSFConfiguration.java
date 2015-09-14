@@ -11,7 +11,7 @@ public class JSFConfiguration implements ServletContextInitializer {
 
 	@Override
 	public void onStartup(ServletContext sc) throws ServletException {
-		sc.setInitParameter("primefaces.THEME", "Aristo");
+		sc.setInitParameter("primefaces.THEME", "Dark");
 		sc.setInitParameter("primefaces.CLIENT_SIDE_VALIDATION", "true");
 		sc.setInitParameter("javax.faces.PROJECT_STAGE", "Development");
 	}
