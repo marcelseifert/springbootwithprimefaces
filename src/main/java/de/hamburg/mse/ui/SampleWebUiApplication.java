@@ -16,43 +16,17 @@
 
 package de.hamburg.mse.ui;
 
-import javax.faces.webapp.FacesServlet;
-import javax.servlet.ServletContext;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.embedded.ServletListenerRegistrationBean;
-import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.context.ServletContextAware;
-
-import com.sun.faces.config.ConfigureListener;
 
 @SpringBootApplication
-public class SampleWebUiApplication extends SpringBootServletInitializer implements ServletContextAware {
+public class SampleWebUiApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(SampleWebUiApplication.class);
-	}
-
-	@Bean
-	public ServletRegistrationBean facesServletRegistration() {
-		ServletRegistrationBean registration = new ServletRegistrationBean(new FacesServlet(), "*.xhtml");
-		registration.setLoadOnStartup(1);
-		return registration;
-	}
-
-	@Bean
-	public ServletListenerRegistrationBean<ConfigureListener> jsfConfigureListener() {
-		return new ServletListenerRegistrationBean<ConfigureListener>(new ConfigureListener());
-	}
-
-	@Override
-	public void setServletContext(ServletContext servletContext) {
-		servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
 	}
 
 	public static void main(String[] args) {

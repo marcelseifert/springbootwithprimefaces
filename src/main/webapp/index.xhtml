@@ -134,6 +134,16 @@ body {
 							</prime:column>
 						</prime:dataTable>
 					</prime:panel>
+					
+					<prime:panel header="autcomplete">
+						 <prime:autoComplete id="itemTip" value="#{autoCompleteView.car}" completeMethod="#{autoCompleteView.getCars()}"
+                        var="c" itemLabel="#{c.randomBrand}" itemValue="#{c.randomId}"   forceSelection="true">
+			            <f:facet name="itemtip">
+			                   <h:outputText value="#{c.randomBrand}" />
+			              
+			            </f:facet>
+       				 </prime:autoComplete>
+					</prime:panel>
 				</h:form>
 			</ui:define>
 		</ui:composition>
